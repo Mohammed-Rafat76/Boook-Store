@@ -1,11 +1,59 @@
-import { Field, Form, Formik } from "formik";
+import axios from "axios";
+import { domain } from "../store";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import { BiSolidShow } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import * as Yup from "yup"
 
 export default function SignupPage() {
+  const navigate = useNavigate()
+  const handleRegister = async (values) => {
+    if (values.password_confirmation !== values.password) {
+      alert("wrong password");
+    } else {
+      const data = {
+        first_name: values.first_name,
+        last_name: values.last_name,
+        email: values.email,
+        password: values.password,
+        password_confirmation: values.password_confirmation,
+        
+      };
+      try {
+        const res = await axios.post(`${domain}/register`, data);
+        navigate("/")
+        console.log(res);
+      } catch (error) {
+        console.log(error.response);
+      }
+    }
+  };
+  const registerSchema = Yup.object({
+    first_name: Yup.string().required(),
+    last_name: Yup.string().required(),
+    email: Yup.string().required().email(),
+    password: Yup.string()
+      .required()
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s])(?=\S+$).{8,}$/,
+        "At least 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special, no spaces"
+      ),
+    password_confirmation: Yup.string().required()
+  })
   return (
-    <div className="bg-amber-100 h-screen flex justify-center items-center">
-      <Formik>
+    <div className="bg-amber-100 h-full py-5 flex justify-center items-center">
+      <Formik
+        initialValues={{
+          first_name: "",
+          last_name: "",
+          email: "",
+          password: "",
+          password_confirmation: "",
+         
+        }}
+        validationSchema={registerSchema}
+        onSubmit={handleRegister}
+      >
         <Form className="w-xl flex flex-col justify-center items-center gap-4">
           <div className="w-full flex  gap-4">
             <div className="w-full flex flex-col justify-center items-start ">
@@ -16,11 +64,13 @@ export default function SignupPage() {
                 First Name
               </label>
               <Field
+                name="first_name"
                 type="text"
                 id="text"
                 placeholder="John"
                 className="text-violet-500 w-full rounded-lg border p-4 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
               />
+              <ErrorMessage name="first_name" component={"p"} className="text-red-500 font-medium py-2"/>
             </div>
             <div className="w-full flex flex-col justify-center items-start ">
               <label
@@ -30,11 +80,13 @@ export default function SignupPage() {
                 Last Name
               </label>
               <Field
+                name="last_name"
                 type="text"
                 id="text"
                 placeholder="Smith"
                 className="text-violet-500 w-full rounded-lg border p-4 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
               />
+                            <ErrorMessage name="last_name" component={"p"} className="text-red-500 font-medium py-2"/>
             </div>
           </div>
           <div className="w-full flex flex-col justify-center items-start ">
@@ -45,11 +97,13 @@ export default function SignupPage() {
               Email
             </label>
             <Field
+              name="email"
               type="email"
               id="email"
               placeholder="example@gmail.com"
               className="text-violet-500 w-full rounded-lg border p-4 gap-2 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
             />
+            <ErrorMessage name="email" component={"p"} className="text-red-500 font-medium py-2"/>
           </div>
           <div className="relative w-full flex flex-col justify-center items-start ">
             <label
@@ -59,11 +113,13 @@ export default function SignupPage() {
               Password
             </label>
             <Field
+              name="password"
               type="password"
               id="password"
               placeholder="Enter password"
               className=" text-violet-500 w-full  rounded-lg border p-4 gap-2 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
             />
+            <ErrorMessage name="password" component={"p"} className="text-red-500 font-medium py-2"/>
             <BiSolidShow className="cursor-pointer text-[#22222280] absolute w-3.5 h-3.5 right-5 top-12.5 bottom-5" />
           </div>
           <div className="relative w-full flex flex-col justify-center items-start ">
@@ -74,8 +130,9 @@ export default function SignupPage() {
               Confirm password
             </label>
             <Field
+              name="password_confirmation"
               type="text"
-              id="text"
+              id="password_confirmation"
               placeholder="Enter password"
               className="text-violet-500 w-full  rounded-lg border p-4 gap-2 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
             />
@@ -94,10 +151,24 @@ export default function SignupPage() {
               </span>
             </h1>
           </div>
-          <button className=" rounded-lg py-3 px-4 bg-[#D9176C] text-[#FFFFFF] font-semibold text-[18px] w-full ">
+          <button
+            type="submit"
+            onSubmit={(values) => {
+              handleRegister(values);
+            }}
+            className=" rounded-lg py-3 px-4 bg-[#D9176C] text-[#FFFFFF] font-semibold text-[18px] w-full "
+          >
             Sign Up
           </button>
-          <h1 className="font-normal text-[#222222] text-[16px] ">Already have an account? <Link to={"/"} className="font-semibold text-[16px] text-[#D9176C] ">Login</Link></h1>
+          <h1 className="font-normal text-[#222222] text-[16px] ">
+            Already have an account?{" "}
+            <Link
+              to={"/"}
+              className="font-semibold text-[16px] text-[#D9176C] "
+            >
+              Login
+            </Link>
+          </h1>
           <button className="btn w-full bg-white text-black border-[#e5e5e5]">
             <svg
               aria-label="Google logo"
