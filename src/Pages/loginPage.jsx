@@ -4,9 +4,10 @@ import { BiSolidShow } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import { domain } from "../store";
 import * as Yup from "yup";
+import Header from "../Component/header";
 
 export default function LoginPage() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleLogin = async (values) => {
     const data = {
       email: values.email,
@@ -14,7 +15,7 @@ export default function LoginPage() {
     };
     try {
       const res = await axios.post(`${domain}/login`, data);
-      navigate("/home")
+      navigate("/home");
       console.log(res);
     } catch (error) {
       console.log(error);
@@ -30,9 +31,21 @@ export default function LoginPage() {
       ),
   });
   return (
-    <div className="bg-amber-100 h-screen flex justify-center items-center">
-      <Formik initialValues={{email:"",password:""}} validationSchema={loginSchema} onSubmit={handleLogin}>
+    <div className="bg-[#F5F5F5] h-full flex flex-col justify-center items-center gap-15 ">
+      <div
+        className={`relative w-full h-84.5 bg-[url(/public/533643aa8db82414f48d43a992d009dda3961386.png)] bg-cover bg- bg-no-repeat bg-position-[center_50%] transform scale-x-[-1]`}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+      <div className="absolute top-0 w-full"><Header/></div>
+      
+      <Formik
+        initialValues={{ email: "", password: "" }}
+        validationSchema={loginSchema}
+        onSubmit={handleLogin}
+      >
         <Form className="w-xl flex flex-col justify-center items-center gap-4">
+          <h1 className="text-[16px] font-semibold text-[#D9176C] ">Welcome Back!</h1>
           <div className="w-full flex flex-col justify-center items-start ">
             <label
               htmlFor="email"
@@ -47,7 +60,11 @@ export default function LoginPage() {
               placeholder="example@gmail.com"
               className="text-violet-500 w-full rounded-lg border p-4 gap-2 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
             />
-            <ErrorMessage name="email" component={"p"} className="text-red-500 font-medium py-2"/>
+            <ErrorMessage
+              name="email"
+              component={"p"}
+              className="text-red-500 font-medium py-2"
+            />
           </div>
           <div className="relative w-full flex flex-col justify-center items-start ">
             <label
@@ -63,7 +80,11 @@ export default function LoginPage() {
               placeholder="Enter password"
               className=" text-violet-500 w-full  rounded-lg border p-4 gap-2 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
             />
-            <ErrorMessage name="password" component={"p"} className="text-red-500 font-medium py-2"/>
+            <ErrorMessage
+              name="password"
+              component={"p"}
+              className="text-red-500 font-medium py-2"
+            />
             <BiSolidShow className="cursor-pointer text-[#22222280] absolute w-3.5 h-3.5 right-5 top-12.5 bottom-5" />
           </div>
 
@@ -99,6 +120,7 @@ export default function LoginPage() {
               Signup
             </Link>
           </h1>
+          <h1 className="font-normal text-[14px] text-[#00000080]">or</h1>
           <button className="btn w-full bg-white text-black border-[#e5e5e5]">
             <svg
               aria-label="Google logo"
