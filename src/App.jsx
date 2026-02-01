@@ -5,6 +5,8 @@ import LoginPage from "./Pages/loginPage";
 import SignupPage from "./Pages/signupPage";
 import HomePage from "./Pages/homePage";
 import MainLayOut from "./mainLayOut";
+import BooksPage from "./Pages/booksPage";
+import AboutUsPage from "./Pages/aboutUsPage";
 
 export default function App() {
   return (
@@ -15,6 +17,8 @@ export default function App() {
             <Route index element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/home" element={<HomePage />} />
+            <Route path="/books" element={<BooksPage />} />
+            <Route path="/aboutUs" element={<AboutUsPage />} />
           </Route>
           <Route path="*" element={<h1 className="text-7xl font-extrabold text-red-400">404 error</h1>} />
         </Routes>

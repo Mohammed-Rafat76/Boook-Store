@@ -4,8 +4,6 @@ import { BiSolidShow } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import { domain } from "../store";
 import * as Yup from "yup";
-import Header from "../Component/header";
-import Footer from "../Component/footer";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -39,7 +37,7 @@ export default function LoginPage() {
         validationSchema={loginSchema}
         onSubmit={handleLogin}
       >
-        <Form className="w-xl flex flex-col justify-center items-center gap-4">
+        <Form className="xl:w-xl lg:w-lg md:w-md w-[80%] flex flex-col justify-center items-center gap-4">
           <h1 className="text-[16px] font-semibold text-[#D9176C] ">Welcome Back!</h1>
           <div className="w-full flex flex-col justify-center items-start ">
             <label
