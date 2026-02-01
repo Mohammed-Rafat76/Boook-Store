@@ -1,12 +1,37 @@
-import { Field, Form, Formik } from "formik";
+import axios from "axios";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import { BiSolidShow } from "react-icons/bi";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { domain } from "../store";
+import * as Yup from "yup";
 
 export default function LoginPage() {
+  const navigate = useNavigate()
+  const handleLogin = async (values) => {
+    const data = {
+      email: values.email,
+      password: values.password,
+    };
+    try {
+      const res = await axios.post(`${domain}/login`, data);
+      navigate("/home")
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const loginSchema = Yup.object({
+    email: Yup.string().required().email(),
+    password: Yup.string()
+      .required()
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s])(?=\S+$).{8,}$/,
+        "At least 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special, no spaces",
+      ),
+  });
   return (
     <div className="bg-amber-100 h-screen flex justify-center items-center">
-      <Formik>
+      <Formik initialValues={{email:"",password:""}} validationSchema={loginSchema} onSubmit={handleLogin}>
         <Form className="w-xl flex flex-col justify-center items-center gap-4">
           <div className="w-full flex flex-col justify-center items-start ">
             <label
@@ -16,11 +41,13 @@ export default function LoginPage() {
               Email
             </label>
             <Field
+              name="email"
               type="email"
               id="email"
               placeholder="example@gmail.com"
               className="text-violet-500 w-full rounded-lg border p-4 gap-2 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
             />
+            <ErrorMessage name="email" component={"p"} className="text-red-500 font-medium py-2"/>
           </div>
           <div className="relative w-full flex flex-col justify-center items-start ">
             <label
@@ -30,11 +57,13 @@ export default function LoginPage() {
               Password
             </label>
             <Field
+              name="password"
               type="password"
               id="password"
               placeholder="Enter password"
               className=" text-violet-500 w-full  rounded-lg border p-4 gap-2 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
             />
+            <ErrorMessage name="password" component={"p"} className="text-red-500 font-medium py-2"/>
             <BiSolidShow className="cursor-pointer text-[#22222280] absolute w-3.5 h-3.5 right-5 top-12.5 bottom-5" />
           </div>
 
@@ -45,11 +74,20 @@ export default function LoginPage() {
               className="checkbox checkbox-secondary w-5 h-5"
             />
             <div className="flex w-full justify-between items-center">
-              <h1 className="font-normal text-[14px] text-[#222222] ">Remember me</h1>
-              <h1 className="font-normal text-[16px] text-[#D9176C] cursor-pointer">Forget password?</h1>
+              <h1 className="font-normal text-[14px] text-[#222222] ">
+                Remember me
+              </h1>
+              <h1 className="font-normal text-[16px] text-[#D9176C] cursor-pointer">
+                Forget password?
+              </h1>
             </div>
           </div>
-          <button className=" rounded-lg py-3 px-4 bg-[#D9176C] text-[#FFFFFF] font-semibold text-[18px] w-full ">
+          <button
+            onSubmit={(values) => {
+              handleLogin(values);
+            }}
+            className=" rounded-lg py-3 px-4 bg-[#D9176C] text-[#FFFFFF] font-semibold text-[18px] w-full "
+          >
             Log in
           </button>
           <h1 className="font-normal text-[#222222] text-[16px] ">
