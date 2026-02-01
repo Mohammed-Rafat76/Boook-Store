@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { domain } from "../store";
 import * as Yup from "yup";
 import Header from "../Component/header";
+import Footer from "../Component/footer";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -31,14 +32,8 @@ export default function LoginPage() {
       ),
   });
   return (
-    <div className="bg-[#F5F5F5] h-full flex flex-col justify-center items-center gap-15 ">
-      <div
-        className={`relative w-full h-84.5 bg-[url(/public/533643aa8db82414f48d43a992d009dda3961386.png)] bg-cover bg- bg-no-repeat bg-position-[center_50%] transform scale-x-[-1]`}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-      </div>
-      <div className="absolute top-0 w-full"><Header/></div>
-      
+    <div className="bg-[#F5F5F5] h-full flex flex-col justify-center items-center gap-15 py-15">
+
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={loginSchema}

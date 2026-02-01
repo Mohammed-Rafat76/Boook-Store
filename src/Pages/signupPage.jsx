@@ -4,6 +4,8 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { BiSolidShow } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup"
+import Footer from "../Component/footer";
+import Header from "../Component/header";
 
 export default function SignupPage() {
   const navigate = useNavigate()
@@ -41,7 +43,7 @@ export default function SignupPage() {
     password_confirmation: Yup.string().required()
   })
   return (
-    <div className="bg-amber-100 h-full py-5 flex justify-center items-center">
+    <div className="bg-[#F5F5F5] h-full flex flex-col justify-center items-center gap-15 py-15">
       <Formik
         initialValues={{
           first_name: "",
