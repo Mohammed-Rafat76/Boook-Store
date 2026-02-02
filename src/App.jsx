@@ -7,6 +7,7 @@ import HomePage from "./Pages/homePage";
 import MainLayOut from "./mainLayOut";
 import BooksPage from "./Pages/booksPage";
 import AboutUsPage from "./Pages/aboutUsPage";
+import ForgetpasswordPage from "./Pages/ForgetpasswordPage";
 
 export default function App() {
   return (
@@ -19,6 +20,8 @@ export default function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/books" element={<BooksPage />} />
             <Route path="/aboutUs" element={<AboutUsPage />} />
+            <Route path="/forgetpassword" element={<ForgetpasswordPage />} />
+            <Route path="/addCode" element={<ForgetpasswordPage />} />
           </Route>
           <Route path="*" element={<h1 className="text-7xl font-extrabold text-red-400">404 error</h1>} />
         </Routes>

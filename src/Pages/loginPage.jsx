@@ -91,9 +91,9 @@ export default function LoginPage() {
               <h1 className="font-normal text-[14px] text-[#222222] ">
                 Remember me
               </h1>
-              <h1 className="font-normal text-[16px] text-[#D9176C] cursor-pointer">
+              <Link to={"/forgetpassword"} className="font-normal text-[16px] text-[#D9176C] cursor-pointer">
                 Forget password?
-              </h1>
+              </Link>
             </div>
           </div>
           <button
