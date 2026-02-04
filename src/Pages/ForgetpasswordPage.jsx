@@ -34,7 +34,7 @@ export default function ForgetpasswordPage() {
               className="text-red-500 font-medium py-2"
             />
           </div>
-          <Link to={"/addCode"} className="cursor-pointer w-full py-3 px-4 bg-[#D9176C] rounded-lg font-semibold text-[18px]">Send reset code</Link>
+          <Link to={"/addCode"} className="cursor-pointer w-full py-3 px-4 bg-[#D9176C] rounded-lg font-semibold text-[18px] flex justify-center items-center">Send reset code</Link>
         </Form>
       </Formik>
     </div>
