@@ -9,6 +9,7 @@ import BooksPage from "./Pages/booksPage";
 import AboutUsPage from "./Pages/aboutUsPage";
 import ForgetpasswordPage from "./Pages/ForgetpasswordPage";
 import AddCode from "./Pages/addCode";
+import ResetPassword from "./Pages/ResetPassword";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/aboutUs" element={<AboutUsPage />} />
             <Route path="/forgetpassword" element={<ForgetpasswordPage />} />
             <Route path="/addCode" element={<AddCode />} />
+            <Route path="/resetPassword" element={<ResetPassword />} />
           </Route>
           <Route
             path="*"

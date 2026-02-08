@@ -3,12 +3,12 @@ import { domain } from "../store";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { BiSolidShow } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
-import * as Yup from "yup"
+import * as Yup from "yup";
 import Footer from "../Component/footer";
 import Header from "../Component/header";
 
 export default function SignupPage() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleRegister = async (values) => {
     if (values.password_confirmation !== values.password) {
       alert("wrong password");
@@ -19,11 +19,10 @@ export default function SignupPage() {
         email: values.email,
         password: values.password,
         password_confirmation: values.password_confirmation,
-        
       };
       try {
         const res = await axios.post(`${domain}/register`, data);
-        navigate("/")
+        navigate("/");
         console.log(res);
       } catch (error) {
         console.log(error.response);
@@ -38,10 +37,10 @@ export default function SignupPage() {
       .required()
       .matches(
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s])(?=\S+$).{8,}$/,
-        "At least 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special, no spaces"
+        "At least 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special, no spaces",
       ),
-    password_confirmation: Yup.string().required()
-  })
+    password_confirmation: Yup.string().required(),
+  });
   return (
     <div className="bg-[#F5F5F5] h-full flex flex-col justify-center items-center gap-15 py-15">
       <Formik
@@ -51,7 +50,6 @@ export default function SignupPage() {
           email: "",
           password: "",
           password_confirmation: "",
-         
         }}
         validationSchema={registerSchema}
         onSubmit={handleRegister}
@@ -72,7 +70,11 @@ export default function SignupPage() {
                 placeholder="John"
                 className="text-violet-500 w-full rounded-lg border p-4 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
               />
-              <ErrorMessage name="first_name" component={"p"} className="text-red-500 font-medium py-2"/>
+              <ErrorMessage
+                name="first_name"
+                component={"p"}
+                className="text-red-500 font-medium py-2"
+              />
             </div>
             <div className="w-full flex flex-col justify-center items-start ">
               <label
@@ -88,7 +90,11 @@ export default function SignupPage() {
                 placeholder="Smith"
                 className="text-violet-500 w-full rounded-lg border p-4 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
               />
-                            <ErrorMessage name="last_name" component={"p"} className="text-red-500 font-medium py-2"/>
+              <ErrorMessage
+                name="last_name"
+                component={"p"}
+                className="text-red-500 font-medium py-2"
+              />
             </div>
           </div>
           <div className="w-full flex flex-col justify-center items-start ">
@@ -105,7 +111,11 @@ export default function SignupPage() {
               placeholder="example@gmail.com"
               className="text-violet-500 w-full rounded-lg border p-4 gap-2 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
             />
-            <ErrorMessage name="email" component={"p"} className="text-red-500 font-medium py-2"/>
+            <ErrorMessage
+              name="email"
+              component={"p"}
+              className="text-red-500 font-medium py-2"
+            />
           </div>
           <div className="relative w-full flex flex-col justify-center items-start ">
             <label
@@ -121,7 +131,11 @@ export default function SignupPage() {
               placeholder="Enter password"
               className=" text-violet-500 w-full  rounded-lg border p-4 gap-2 bg-[#FFFFFF] border-[#22222233] placeholder:text-[#22222280] placeholder:text-[16px] placeholder:font-normal "
             />
-            <ErrorMessage name="password" component={"p"} className="text-red-500 font-medium py-2"/>
+            <ErrorMessage
+              name="password"
+              component={"p"}
+              className="text-red-500 font-medium py-2"
+            />
             <BiSolidShow className="cursor-pointer text-[#22222280] absolute w-3.5 h-3.5 right-5 top-12.5 bottom-5" />
           </div>
           <div className="relative w-full flex flex-col justify-center items-start ">

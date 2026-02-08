@@ -20,7 +20,7 @@ export default function AddCode() {
           <Digit borderColor="#2222224D" />
         </div>
         <Link
-          to={""}
+          to={"/resetPassword"}
           className="cursor-pointer w-full py-3 px-4 bg-[#D9176C] rounded-lg font-semibold text-[18px] flex justify-center items-center"
         >
           Reset password
