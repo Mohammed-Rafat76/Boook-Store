@@ -179,7 +179,7 @@ export default function SignupPage() {
           <h1 className="font-normal text-[#222222] text-[16px] ">
             Already have an account?{" "}
             <Link
-              to={"/"}
+              to={"/login"}
               className="font-semibold text-[16px] text-[#D9176C] "
             >
               Login

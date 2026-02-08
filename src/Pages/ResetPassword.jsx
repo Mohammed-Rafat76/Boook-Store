@@ -67,7 +67,7 @@ export default function ResetPassword() {
             </div>
           </div>
           <Link
-            to={"/"}
+            to={"/login"}
             className="cursor-pointer w-full py-3 px-4 bg-[#D9176C] rounded-lg font-semibold text-[18px] flex justify-center items-center"
           >
             Send reset code
