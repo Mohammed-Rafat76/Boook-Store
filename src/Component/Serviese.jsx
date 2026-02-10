@@ -6,7 +6,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 export default function Serviese() {
   return (
     <div>
-        <div className="flex justify-center items-center py-30 px-16 gap-14">
+        <div className="flex flex-col lg:flex-row justify-center items-center py-30 lg:px-16 px-8 gap-14">
         <div className="flex flex-col justify-center items-start gap-4">
           <TbTruckDelivery className="text-[#22222280] w-8 h-8" />
           <h1 className="font-bold text-[18px] text-[#222222]">
