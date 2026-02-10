@@ -1,9 +1,13 @@
 
+import SearshInput from "../Component/searshInput";
+import Serviese from "../Component/Serviese";
+
 
 export default function HomePage() {
   return (
-    <div>
-        
+    <div >
+      <SearshInput />
+      <Serviese/>
     </div>
-  )
+  );
 }
