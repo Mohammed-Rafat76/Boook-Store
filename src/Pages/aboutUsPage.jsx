@@ -1,7 +1,9 @@
-import React from 'react'
+import AboutBookshop from "../Component/AboutComponenet/AboutBookshop";
 
 export default function AboutUsPage() {
   return (
-    <div>aboutUsPage</div>
+    <div>
+      <AboutBookshop/>
+    </div>
   )
 }
