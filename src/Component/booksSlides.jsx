@@ -1,48 +1,41 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import "swiper/css";
 
-export default function BooksSlides({ books = [] }) {
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { books } from "../store";
+
+export default function booksSlides() {
   return (
-    <div className="w-full">
+    <div>
       <Swiper
+        className="w-full"
         modules={[Autoplay]}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        loop={true}
+        autoplay={{ delay: 1000, disableOnInteraction: false }}
+        speed={700}
+        loop={books.length > 1}
+        navigation
+        pagination={{ clickable: true }}
+        centeredSlides={true}
         spaceBetween={20}
-        slidesPerView={4}
         breakpoints={{
           0: { slidesPerView: 1 },
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 4 },
+          640: { slidesPerView: 3 },
+          1024: { slidesPerView: 6.1 }, 
         }}
       >
-        {books.map((book) => {
-          const images = Array.isArray(book.bookImage) ? book.bookImage : [];
-          const img =
-            images.find((i) => i.type === "main")?.image ||
-            images[0]?.image ||
-            "/public/533643aa8db82414f48d43a992d009dda3961386.png";
-          return (
-            <SwiperSlide key={book.bookId}>
-              <div className=" rounded shadow">
-                <img
-                  src={img}
-                  alt={book.bookName}
-                  className="h-40 w-full object-cover rounded"
-                  onError={(e) => {
-            e.currentTarget.onerror = null; 
-            e.currentTarget.src = "/placeholder.png";
-          }}
-                />
-                 <p className="mt-2 text-sm font-semibold">{book.bookName}</p>
-              </div>
-            </SwiperSlide>
-          );
-        })}
+        {books.map((book) => (
+          <SwiperSlide className="flex justify-center" key={book.id}>
+            <div className="rounded shadow w-50 ">
+              <img
+                src={book.image}
+                alt={book.name}
+                className="h-80 xl:w-full object-cover rounded"
+              />
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
