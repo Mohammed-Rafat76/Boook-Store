@@ -18,7 +18,7 @@ export default function BestSellerSection() {
         <div className="w-full">
           <BooksSlides />
         </div>
-        <div></div>
+        <button className="py-3 px-4 rounded-lg bg-[#D9176C] text-[18px] font-semibold tetx-[#FFFFFF] w-45">Shop now</button>
       </div>
     </div>
   );

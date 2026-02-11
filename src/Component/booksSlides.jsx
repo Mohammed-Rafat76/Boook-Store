@@ -20,9 +20,10 @@ export default function booksSlides() {
         centeredSlides={true}
         spaceBetween={20}
         breakpoints={{
-          0: { slidesPerView: 1 },
-          640: { slidesPerView: 3 },
-          1024: { slidesPerView: 6.1 }, 
+          0: { slidesPerView: 1.7 },
+          768: { slidesPerView: 3.8 },
+          1024: { slidesPerView: 4.5 }, 
+          1440: { slidesPerView: 6.2 }, 
         }}
       >
         {books.map((book) => (
