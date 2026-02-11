@@ -1,4 +1,4 @@
-import React from 'react'
+
 import RecomendedCard from './recomendedCard'
 
 export default function Recomended() {

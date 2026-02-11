@@ -1,5 +1,5 @@
 import { IoStarSharp } from "react-icons/io5";
-import bookImg from "../assets/93e9747c9160601f7f3a7a57420103fe4025b18a.png";
+import bookImg from "../../assets/93e9747c9160601f7f3a7a57420103fe4025b18a.png";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
 

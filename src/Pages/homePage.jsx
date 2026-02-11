@@ -1,7 +1,8 @@
-import BestSellerSection from "../Component/bestSellerSection";
-import Recomended from "../Component/recomended";
-import SearshInput from "../Component/searshInput";
-import Serviese from "../Component/Serviese";
+import BestSellerSection from "../Component/HomeComponent/bestSellerSection";
+import FlashSaleSection from "../Component/HomeComponent/FlashSaleSection";
+import Recomended from "../Component/HomeComponent/recomended";
+import SearshInput from "../Component/HomeComponent/searshInput";
+import Serviese from "../Component/HomeComponent/Serviese";
 
 
 export default function HomePage() {
@@ -11,6 +12,7 @@ export default function HomePage() {
       <Serviese/>
       <BestSellerSection/>
       <Recomended/>
+      <FlashSaleSection/>
     </div>
   );
 }

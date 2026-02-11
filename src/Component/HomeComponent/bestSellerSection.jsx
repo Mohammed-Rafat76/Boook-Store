@@ -1,5 +1,5 @@
 
-import BooksSlides from "./booksSlides";
+import BooksSlides from "../HomeComponent/booksSlides";
 
 
 export default function BestSellerSection() {

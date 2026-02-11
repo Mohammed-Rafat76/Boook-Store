@@ -4,7 +4,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { books } from "../store";
+import { books } from "../../store";
 
 export default function booksSlides() {
   return (
