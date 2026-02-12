@@ -11,6 +11,8 @@ import ResetPassword from "./Pages/ResetPassword";
 import { Toaster } from "react-hot-toast";
 import Profile from "./Pages/Profile";
 import ProductdetailsPage from "./Pages/ProductdetailsPage";
+import CustomerReviewsPage from "./Pages/CustomerReviewsPage";
+import RecomendedForYouPage from "./Pages/RecomendedForYouPage";
 export default function App() {
   return (
     <div>
@@ -28,6 +30,8 @@ export default function App() {
             <Route path="/addCode" element={<AddCode />} />
             <Route path="/resetPassword" element={<ResetPassword />} />
             <Route path="/productdetailsPage" element={<ProductdetailsPage />} />
+            <Route path="/customerReviewsPage" element={<CustomerReviewsPage />} />
+            <Route path="/recomendedForYouPage" element={<RecomendedForYouPage />} />
           </Route>
           <Route
             path="*"
