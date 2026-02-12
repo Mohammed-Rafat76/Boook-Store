@@ -1,4 +1,5 @@
 import AboutBookshop from "../Component/AboutComponenet/AboutBookshop";
+import AskSection from "../Component/AboutComponenet/AskSection";
 import OurMission from "../Component/AboutComponenet/OurMissionSection";
 
 export default function AboutUsPage() {
@@ -6,6 +7,7 @@ export default function AboutUsPage() {
     <div>
       <AboutBookshop/>
       <OurMission/>
+      <AskSection/>
     </div>
   )
 }
