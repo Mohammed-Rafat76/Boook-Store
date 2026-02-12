@@ -4,7 +4,7 @@ import OpenMenuModal from "./OpenMenuModal";
 import { CiHeart } from "react-icons/ci";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import userImg from "../assets/7098886df02b2521176bde95e31347ff1428d87f.jpg";
-export default function Header({ isLoggedIn, logout }) {
+export default function Header() {
   return (
     <div>
       <div
