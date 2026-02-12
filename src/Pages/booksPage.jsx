@@ -3,9 +3,13 @@ import RightBooksComponenet from "../Component/BooksComponent/RightBooksComponen
 
 export default function BooksPage() {
   return (
-    <div className="bg-[#F5F5F5] flex justify-between items-start">
-      <Filter />
-      <RightBooksComponenet />
+    <div className="bg-[#F5F5F5] grid grid-cols-1 lg:grid-cols-12 ">
+      <div className="col-span-4">
+        <Filter />
+      </div>
+      <div className="col-span-8">
+        <RightBooksComponenet />
+      </div>
     </div>
   );
 }
