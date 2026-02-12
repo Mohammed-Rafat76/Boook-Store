@@ -6,7 +6,7 @@ export default function RecomendedForYou() {
   return (
     <>
       <div className="w-full flex flex-col gap-10 pb-45">
-        <div className="flex justify-start items-center gap-20 border-b-2 border-[#2222221A] pb-6">
+        <div className="flex flex-col lg:flex-row justify-start items-center gap-20 border-b-2 border-[#2222221A] pb-6">
           <Link to={"/productdetailsPage"} className="h-full font-bold text-[26px] text-[#22222280] ">
             Product Details
           </Link>
@@ -24,7 +24,7 @@ export default function RecomendedForYou() {
           </h1>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-10 px-40 pb-54">
+      <div className="flex flex-col xl:flex-row justify-center items-center gap-10 xl:px-40 px-5 pb-54">
         <FlashSaleCard />
         <FlashSaleCard />
       </div>

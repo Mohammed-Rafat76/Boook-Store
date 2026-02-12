@@ -22,12 +22,12 @@ export default function ProductDetailsCard() {
   const dec = useCounterStore((state) => state.dec);
 
   return (
-    <div className="px-15 pt-15 ">
+    <div className="lg:px-15 px-5 pt-15 ">
       <div className="pb-17.5">
         <div className="flex flex-col xl:flex-row justify-center xl:items-start items-center gap-10 border-b border-[#2222221A] lg:border-0 pb-10 lg:pb-0">
           <img
             src={bookImg}
-            className="object-cover xl:w-78 xl:h-full lg:w-40 lg:h-55.5  w-35 h-55"
+            className="object-cover xl:w-78 xl:h-full   w-50 h-80"
             alt=""
           />
           <div className="w-full flex flex-col gap-6 justify-between items-center">
@@ -58,7 +58,7 @@ export default function ProductDetailsCard() {
                 </div>
               </div>
 
-              <div className="w-165 flex justify-between items-start  gap-6">
+             <div className="xl:w-165 flex flex-col xl:flex-row justify-between items-start  gap-6">
                 <div className="w-full flex flex-col justify-center gap-2 items-center">
                   <h1 className="w-full text-[14px] font-normal text-[#22222280]">
                     Author
@@ -120,8 +120,8 @@ export default function ProductDetailsCard() {
                   </h1>
                 </div>
               </div>
-              <div className="w-full flex flex-col justify-center gap-6 items-end">
-                <div className="flex justify-center items-center gap-3">
+              <div className="w-full flex flex-col justify-center gap-6 lg:items-end items-start pt-4 lg:pt-0">
+                <div className="flex flex-col lg:flex-row justify-center lg:items-center items-start gap-3">
                   <div className="flex justify-center items-center gap-2 rounded-lg border text-[#25D994] py-2 px-3 bg-white border-[#22222233] text-[14px] font-normal">
                     <IoCheckmarkDoneCircleSharp className="text-[#25D994]" />
                     In Stock
@@ -136,7 +136,7 @@ export default function ProductDetailsCard() {
                 </div>
               </div>
             </div>
-            <div className="w-full flex justify-between gap-6 items-center">
+            <div className="w-full flex flex-col xl:flex-row justify-between gap-6 items-center">
               <h1 className="w-full flex justify-start items-center gap-4 font-semibold text-[28px] lg:text-end text-start pt-4 lg:pt-0 text-[#222222]">
                 $40.00
                 <p className="text-[#22222280]  text-[24px] font-semibold line-through">
@@ -165,7 +165,7 @@ export default function ProductDetailsCard() {
             </div>
           </div>
         </div>
-        <div className="flex justify-start items-center p-2.5 gap-4">
+        <div className="hidden xl:flex justify-start items-center p-2.5 gap-4">
           <img src={bookImg} className="w-15.5 h-27" alt="" />
           <img src={bookImg2} className="w-15.5 h-27" alt="" />
           <img src={bookImg} className="w-15.5 h-27" alt="" />

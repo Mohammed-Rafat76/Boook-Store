@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function ProductDetails() {
   return (
     <div className='w-full flex flex-col gap-10 pb-45'>
-        <div className='flex justify-start items-center gap-20 border-b-2 border-[#2222221A] pb-6'>
+        <div className="flex flex-col lg:flex-row justify-start items-center gap-20 border-b-2 border-[#2222221A] pb-6">
             <h1 className='h-full font-bold text-[26px] text-[#222222] border-b-3 border-[#EAA451]'>Product Details</h1>
             <Link to={"/customerReviewsPage"} className='font-bold text-[26px] text-[#22222280]'>Customer Reviews</Link>
             <Link to={"/recomendedForYouPage"} className='font-bold text-[26px] text-[#22222280]'>Recomended For You</Link>
