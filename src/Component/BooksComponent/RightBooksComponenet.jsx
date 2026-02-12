@@ -2,10 +2,11 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import BooksSearsh from "./BooksSearsh";
 import Categories from "./Categories";
 import BooksCards from "./BooksCards";
+import BooksPagenation from "./BooksPagenation";
 
 export default function RightBooksComponenet() {
   return (
-    <div className="w-full bg-[#F5F5F5] pl-6 pr-10 pt-15 flex flex-col gap-6">
+    <div className="w-full bg-[#F5F5F5] pl-6 pb-32 pr-10 pt-15 flex flex-col gap-6">
       <div className="h-full w-full grid grid-cols-12 gap-6.5">
         <div className="col-span-9">
           <BooksSearsh />
@@ -24,6 +25,9 @@ export default function RightBooksComponenet() {
       </div>
       <div className="w-full ">
             <BooksCards/>
+      </div>
+      <div className="flex pt-30 justify-center items-center">
+        <BooksPagenation/>
       </div>
     </div>
   );
