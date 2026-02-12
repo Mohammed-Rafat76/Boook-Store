@@ -4,6 +4,7 @@ import { BiSolidShow } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import { domain } from "../store";
 import * as Yup from "yup";
+import toast from "react-hot-toast";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -14,9 +15,11 @@ export default function LoginPage() {
     };
     try {
       const res = await axios.post(`${domain}/login`, data);
-      navigate("/home");
+      navigate("/");
+      toast.success('welcome')
       console.log(res);
     } catch (error) {
+      toast.error("Wrong email or password")
       console.log(error);
     }
   };

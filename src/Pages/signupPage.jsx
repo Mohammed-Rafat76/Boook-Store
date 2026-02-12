@@ -4,8 +4,8 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { BiSolidShow } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import Footer from "../Component/footer";
-import Header from "../Component/header";
+
+import toast from "react-hot-toast";
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -23,8 +23,10 @@ export default function SignupPage() {
       try {
         const res = await axios.post(`${domain}/register`, data);
         navigate("/");
+        toast.success('Welcome friend')
         console.log(res);
       } catch (error) {
+        toast.error("The Acount already exists")
         console.log(error.response);
       }
     }

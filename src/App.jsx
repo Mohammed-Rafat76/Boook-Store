@@ -8,9 +8,11 @@ import AboutUsPage from "./Pages/aboutUsPage";
 import ForgetpasswordPage from "./Pages/ForgetpasswordPage";
 import AddCode from "./Pages/addCode";
 import ResetPassword from "./Pages/ResetPassword";
+import { Toaster } from "react-hot-toast";
 export default function App() {
   return (
     <div>
+      <Toaster position="top-center" />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayOut />}>
