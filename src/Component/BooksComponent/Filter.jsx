@@ -4,7 +4,7 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export default function Filter() {
   return (
-    <div className="w-full border-r border-[#2222221A] pl-15 pt-15 pr-4">
+    <div className="w-full  pl-15 pt-15 pr-4">
       <div className="w-full flex flex-col justify-center items-center gap-8">
         <div className="w-full flex justify-start items-center gap-4">
           <VscFilter className="w-6 h-6 text-black" />

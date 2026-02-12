@@ -5,7 +5,7 @@ export default function BooksSearsh() {
   return (
     <div className="h-full">
       <div className=" flex h-full items-start justify-center ">
-        <div className="join w-full h-full flex items-start xl:h-15 lg:h-13 md:h-10  ">
+        <div className="join w-full flex items-start xl:h-15 lg:h-13 md:h-15 h-10 ">
           <div className="w-full h-full">
             <label className="input w-full p-0 m-0 border-r border-[#2222221A] bg-[#FFFFFF] rounded-l-[50px]  h-full validator text-violet-700 join-item">
               <input
