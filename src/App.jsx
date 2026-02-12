@@ -9,6 +9,7 @@ import ForgetpasswordPage from "./Pages/ForgetpasswordPage";
 import AddCode from "./Pages/addCode";
 import ResetPassword from "./Pages/ResetPassword";
 import { Toaster } from "react-hot-toast";
+import Profile from "./Pages/Profile";
 export default function App() {
   return (
     <div>
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/" element={<MainLayOut />}>
             <Route index element={<HomePage />} />
             <Route path="/signup" element={<SignupPage />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/books" element={<BooksPage />} />
             <Route path="/aboutUs" element={<AboutUsPage />} />
