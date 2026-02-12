@@ -1,7 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import LoginPage from "./Pages/loginPage";
-
 import SignupPage from "./Pages/signupPage";
 import HomePage from "./Pages/homePage";
 import MainLayOut from "./mainLayOut";
@@ -10,7 +8,6 @@ import AboutUsPage from "./Pages/aboutUsPage";
 import ForgetpasswordPage from "./Pages/ForgetpasswordPage";
 import AddCode from "./Pages/addCode";
 import ResetPassword from "./Pages/ResetPassword";
-
 export default function App() {
   return (
     <div>
