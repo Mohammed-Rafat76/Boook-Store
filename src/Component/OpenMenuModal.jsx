@@ -14,7 +14,7 @@ export default function OpenMenuModal() {
       </button>
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
         <div className="flex flex-col justify-center items-center gap-7 modal-box">
-         <Link to={"/home"}>Home</Link>
+         <Link to={"/"}>Home</Link>
          <Link to={"/books"}>Books</Link>
          <Link to={"/aboutUs"}>About us</Link>
           <div className="modal-action">

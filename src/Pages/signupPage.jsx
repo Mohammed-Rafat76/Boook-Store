@@ -4,10 +4,12 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { BiSolidShow } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
+import { useOutletContext } from "react-router-dom";
 
 import toast from "react-hot-toast";
 
 export default function SignupPage() {
+  const { login } = useOutletContext();
   const navigate = useNavigate();
   const handleRegister = async (values) => {
     if (values.password_confirmation !== values.password) {
@@ -22,6 +24,7 @@ export default function SignupPage() {
       };
       try {
         const res = await axios.post(`${domain}/register`, data);
+         login();
         navigate("/");
         toast.success('Welcome friend')
         console.log(res);

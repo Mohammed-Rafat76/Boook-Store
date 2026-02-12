@@ -1,3 +1,4 @@
+import axios from "axios";
 import BestSellerSection from "../Component/HomeComponent/bestSellerSection";
 import FlashSaleSection from "../Component/HomeComponent/FlashSaleSection";
 import Recomended from "../Component/HomeComponent/recomended";
@@ -7,14 +8,14 @@ import LoginModal from "../Component/loginModal";
 
 
 export default function HomePage() {
+ 
   return (
-    <div >
-      <LoginModal/>
+    <div>
       <SearshInput />
-      <Serviese/>
-      <BestSellerSection/>
-      <Recomended/>
-      <FlashSaleSection/>
+      <Serviese />
+      <BestSellerSection />
+      <Recomended />
+      <FlashSaleSection />
     </div>
   );
 }

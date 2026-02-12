@@ -5,8 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { domain } from "../store";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
+import { useOutletContext } from "react-router-dom";
 
 export default function LoginPage() {
+  const { login } = useOutletContext();
   const navigate = useNavigate();
   const handleLogin = async (values) => {
     const data = {
@@ -15,12 +17,11 @@ export default function LoginPage() {
     };
     try {
       const res = await axios.post(`${domain}/login`, data);
+      login();
       navigate("/");
-      toast.success('welcome')
-      console.log(res);
+      toast.success("welcome");
     } catch (error) {
-      toast.error("Wrong email or password")
-      console.log(error);
+      toast.error("Wrong email or password");
     }
   };
   const loginSchema = Yup.object({
@@ -34,14 +35,15 @@ export default function LoginPage() {
   });
   return (
     <div className="bg-[#F5F5F5] h-full flex flex-col justify-center items-center gap-15 py-15">
-
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={loginSchema}
         onSubmit={handleLogin}
       >
         <Form className="xl:w-xl lg:w-lg md:w-md w-[80%] flex flex-col justify-center items-center gap-4">
-          <h1 className="text-[16px] font-semibold text-[#D9176C] ">Welcome Back!</h1>
+          <h1 className="text-[16px] font-semibold text-[#D9176C] ">
+            Welcome Back!
+          </h1>
           <div className="w-full flex flex-col justify-center items-start ">
             <label
               htmlFor="email"
@@ -94,7 +96,10 @@ export default function LoginPage() {
               <h1 className="font-normal text-[14px] text-[#222222] ">
                 Remember me
               </h1>
-              <Link to={"/forgetpassword"} className="font-normal text-[16px] text-[#D9176C] cursor-pointer">
+              <Link
+                to={"/forgetpassword"}
+                className="font-normal text-[16px] text-[#D9176C] cursor-pointer"
+              >
                 Forget password?
               </Link>
             </div>
