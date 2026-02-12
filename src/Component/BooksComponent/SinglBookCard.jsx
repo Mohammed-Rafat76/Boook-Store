@@ -2,6 +2,7 @@ import { IoStarSharp } from "react-icons/io5";
 import bookImg from "../../assets/93e9747c9160601f7f3a7a57420103fe4025b18a.png";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
+import { Link } from "react-router-dom";
 export default function SinglBookCard() {
   return (
     <div className="flex flex-col xl:flex-row justify-center xl:items-start items-center gap-10 border-b border-[#2222221A] lg:border-0 pb-10 lg:pb-0">
@@ -13,9 +14,9 @@ export default function SinglBookCard() {
       <div className="w-full flex flex-col gap-6 justify-between items-center">
         <div className="w-full flex p-5 xl:p-0 flex-col xl:flex-row gap-8 justify-between items-start">
           <div className="w-full flex flex-col justify-start items-center gap-2">
-            <h1 className="text-[18px] w-full font-bold text-[#222222]">
+            <Link to={"/productdetailsPage"} className="cursor-pointer text-[18px] w-full font-bold text-[#222222]">
               Rich Dad And Poor Dad
-            </h1>
+            </Link>
             <p className="w-full  font-normal text-[16px] text-[#22222280]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et
               ultricies est. Aliquam in justo varius, sagittis neque ut,

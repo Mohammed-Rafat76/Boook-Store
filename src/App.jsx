@@ -10,6 +10,7 @@ import AddCode from "./Pages/addCode";
 import ResetPassword from "./Pages/ResetPassword";
 import { Toaster } from "react-hot-toast";
 import Profile from "./Pages/Profile";
+import ProductdetailsPage from "./Pages/ProductdetailsPage";
 export default function App() {
   return (
     <div>
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="/forgetpassword" element={<ForgetpasswordPage />} />
             <Route path="/addCode" element={<AddCode />} />
             <Route path="/resetPassword" element={<ResetPassword />} />
+            <Route path="/productdetailsPage" element={<ProductdetailsPage />} />
           </Route>
           <Route
             path="*"
