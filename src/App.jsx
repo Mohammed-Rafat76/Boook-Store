@@ -16,6 +16,7 @@ import RecomendedForYouPage from "./Pages/RecomendedForYouPage";
 import HomeAfterLogin from "./Pages/HomeAfterLogin";
 import MyCartPage from "./Pages/myCartPage";
 import WishlistPage from "./Pages/WishlistPage";
+import CheckOutPage from "./Pages/CheckOutPage";
 export default function App() {
   return (
     <div>
@@ -38,6 +39,7 @@ export default function App() {
             <Route path="/homeAfterLogin" element={<HomeAfterLogin />} />
             <Route path="/myCartPage" element={<MyCartPage />} />
             <Route path="/wishlistPage" element={<WishlistPage />} />
+            <Route path="/checkOutPage" element={<CheckOutPage />} />
           </Route>
           <Route
             path="*"
