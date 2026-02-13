@@ -1,5 +1,6 @@
 import CardsOfCart from "../Component/MyCartComponenet/CardsOfCart";
-import TheButtons from "../Component/MyCartComponenet/TheButtons";
+import PaymentSummary from "../Component/MyCartComponenet/PaymentSummary";
+
 
 export default function MyCartPage() {
   return (
@@ -12,7 +13,7 @@ export default function MyCartPage() {
         <div className="text-center">Delet</div>
       </div>
       <CardsOfCart />
-      
+      <PaymentSummary/>
     </div>
   );
 }
