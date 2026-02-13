@@ -17,6 +17,7 @@ import HomeAfterLogin from "./Pages/HomeAfterLogin";
 import MyCartPage from "./Pages/myCartPage";
 import WishlistPage from "./Pages/WishlistPage";
 import CheckOutPage from "./Pages/CheckOutPage";
+import HistoryPage from "./Pages/HistoryPage";
 export default function App() {
   return (
     <div>
@@ -40,6 +41,7 @@ export default function App() {
             <Route path="/myCartPage" element={<MyCartPage />} />
             <Route path="/wishlistPage" element={<WishlistPage />} />
             <Route path="/checkOutPage" element={<CheckOutPage />} />
+            <Route path="/historyPage" element={<HistoryPage />} />
           </Route>
           <Route
             path="*"
