@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Choose from './Choose'
 
 export default function PaymentMethod() {
