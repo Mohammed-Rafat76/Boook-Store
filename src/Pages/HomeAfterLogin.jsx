@@ -1,16 +1,10 @@
-import axios from "axios";
 import BestSellerSection from "../Component/HomeComponent/bestSellerSection";
 import FlashSaleSection from "../Component/HomeComponent/FlashSaleSection";
 import Recomended from "../Component/HomeComponent/recomended";
 import SearshInput from "../Component/HomeComponent/searshInput";
 import Serviese from "../Component/HomeComponent/Serviese";
-import AlertComponent from "../Component/HomeComponent/Alert";
 
-
-
-
-export default function HomePage() {
- 
+export default function HomeAfterLogin() {
   return (
     <div>
       <SearshInput />
@@ -18,7 +12,6 @@ export default function HomePage() {
       <BestSellerSection />
       <Recomended />
       <FlashSaleSection />
-      <AlertComponent/>
     </div>
   );
 }

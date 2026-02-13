@@ -13,6 +13,7 @@ import Profile from "./Pages/Profile";
 import ProductdetailsPage from "./Pages/ProductdetailsPage";
 import CustomerReviewsPage from "./Pages/CustomerReviewsPage";
 import RecomendedForYouPage from "./Pages/RecomendedForYouPage";
+import HomeAfterLogin from "./Pages/HomeAfterLogin";
 export default function App() {
   return (
     <div>
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/productdetailsPage" element={<ProductdetailsPage />} />
             <Route path="/customerReviewsPage" element={<CustomerReviewsPage />} />
             <Route path="/recomendedForYouPage" element={<RecomendedForYouPage />} />
+            <Route path="/homeAfterLogin" element={<HomeAfterLogin />} />
           </Route>
           <Route
             path="*"

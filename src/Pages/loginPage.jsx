@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import { useOutletContext } from "react-router-dom";
 
 export default function LoginPage() {
-  const { login } = useOutletContext();
+ 
   const navigate = useNavigate();
   const handleLogin = async (values) => {
     const data = {
@@ -17,11 +17,12 @@ export default function LoginPage() {
     };
     try {
       const res = await axios.post(`${domain}/login`, data);
-      login();
-      navigate("/");
+       console.log(res)
+      navigate("/homeAfterLogin");
       toast.success("welcome");
     } catch (error) {
       toast.error("Wrong email or password");
+      console.log(error)
     }
   };
   const loginSchema = Yup.object({
