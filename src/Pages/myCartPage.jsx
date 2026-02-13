@@ -1,4 +1,5 @@
 import Item from "../Component/MyCartComponenet/Item";
+import Quantity from "../Component/MyCartComponenet/Quantity";
 
 export default function MyCartPage() {
   return (
@@ -12,7 +13,7 @@ export default function MyCartPage() {
       </div>
       <div className="lg:grid grid-cols-[1.6fr_0.6fr_0.6fr_0.6fr_40px] p-6">
         <Item/>
-        <div className=""></div>
+        <Quantity/>
         <div className=""></div>
         <div className=""></div>
         <div className=""></div>
