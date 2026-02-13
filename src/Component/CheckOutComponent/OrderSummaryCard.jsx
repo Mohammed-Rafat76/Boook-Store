@@ -1,7 +1,8 @@
 import bookImg from "../../assets/93e9747c9160601f7f3a7a57420103fe4025b18a.png";
 import { Link } from "react-router-dom";
 import FreeShippingToday from "../ProductdetailsComponent/FreeShippingToday";
-import Counter from "../ProductdetailsComponent/Counter";
+
+import CounterOrderSummary from "./CounterOrderSummary";
 
 export default function OrderSummaryCard() {
   return (
@@ -26,7 +27,7 @@ export default function OrderSummaryCard() {
         <FreeShippingToday />
         <div className="flex flex-row w-full justify-between items-center">
             <p className="text-[24px] font-bold text-[#222222]">$40</p>
-            <Counter/>
+            <CounterOrderSummary/>
         </div>
       </div>
     </div>

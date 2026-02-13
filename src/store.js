@@ -4,12 +4,17 @@ import { create } from "zustand";
 export const useCounterStore = create((set) => ({
   count: 1,
   inc: () => set((state) => ({ count: state.count + 1 })),
-  dec: () => set((state) => ({ count: Math.max(1, state.count - 1) })), // ماينزلش تحت 1
+  dec: () => set((state) => ({ count: Math.max(1, state.count - 1) })), 
 }));
 export const useCounterStoreForCart = create((set) => ({
   count: 1,
   inc: () => set((state) => ({ count: state.count + 1 })),
-  dec: () => set((state) => ({ count: Math.max(1, state.count - 1) })), // ماينزلش تحت 1
+  dec: () => set((state) => ({ count: Math.max(1, state.count - 1) })), 
+}));
+export const useCounterStoreForOrderSumary = create((set) => ({
+  count: 1,
+  inc: () => set((state) => ({ count: state.count + 1 })),
+  dec: () => set((state) => ({ count: Math.max(1, state.count - 1) })), 
 }));
 
 export const books = [
