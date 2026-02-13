@@ -4,7 +4,7 @@ import ShippingInformation from "./ShippingInformation";
 
 export default function LeftCheckOutSection() {
   return (
-    <div className="flex flex-col justify-center items-center gap-6">
+    <div className=" flex flex-col justify-center items-center gap-6">
       <ShippingInformation />
       <PaymentMethod />
       <Note />

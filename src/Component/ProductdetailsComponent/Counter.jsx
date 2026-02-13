@@ -7,7 +7,7 @@ export default function Counter() {
   const inc = useCounterStore((state) => state.inc);
   const dec = useCounterStore((state) => state.dec);
   return (
-    <div className="flex justify-center items-center gap-6 text-black font-bold">
+    <div className="flex justify-center items-center gap-3 text-black font-bold">
       <CiCircleMinus
         onClick={dec}
         className="cursor-pointer text-[#D9176C] w-6 h-6"
