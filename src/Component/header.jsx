@@ -57,12 +57,12 @@ export default function Header() {
           </div>
         </div>
         <div className="hidden xl:flex justify-center items-center gap-6">
-          <div className="hidden xl:block relative">
+          <Link to={"/wishlistPage"} className="hidden xl:block relative">
             <CiHeart className="w-6 h-6 hover:text-orange-400 " />
             <div className="w-4.5 h-4.5 absolute -top-2 left-3.5 flex items-center justify-center bg-[#D9176C] border border-[#FFFFFF] rounded-[100px] text-[10px] p-0.75">
               10
             </div>
-          </div>
+          </Link>
           <Link to={"/myCartPage"} className="hidden xl:block relative">
             <AiOutlineShoppingCart className="w-6 h-6 hover:text-orange-400 " />
             <div className="w-4.5 h-4.5 absolute -top-2 left-3.5 flex items-center justify-center bg-[#D9176C] border border-[#FFFFFF] rounded-[100px] text-[10px] p-0.75">

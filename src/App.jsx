@@ -15,6 +15,7 @@ import CustomerReviewsPage from "./Pages/CustomerReviewsPage";
 import RecomendedForYouPage from "./Pages/RecomendedForYouPage";
 import HomeAfterLogin from "./Pages/HomeAfterLogin";
 import MyCartPage from "./Pages/myCartPage";
+import WishlistPage from "./Pages/WishlistPage";
 export default function App() {
   return (
     <div>
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/recomendedForYouPage" element={<RecomendedForYouPage />} />
             <Route path="/homeAfterLogin" element={<HomeAfterLogin />} />
             <Route path="/myCartPage" element={<MyCartPage />} />
+            <Route path="/wishlistPage" element={<WishlistPage />} />
           </Route>
           <Route
             path="*"

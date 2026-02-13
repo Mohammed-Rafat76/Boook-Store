@@ -5,6 +5,7 @@ export default function CardsOfCart() {
     <div>
       <SingleCardCart />
       <SingleCardCart />
+      <SingleCardCart />
     </div>
   );
 }
