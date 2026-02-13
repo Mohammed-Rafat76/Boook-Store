@@ -1,9 +1,5 @@
-
-import Delete from "../Component/MyCartComponenet/Delete";
-import Item from "../Component/MyCartComponenet/Item";
-import Price from "../Component/MyCartComponenet/Price";
-import Quantity from "../Component/MyCartComponenet/Quantity";
-import Total from "../Component/MyCartComponenet/Total";
+import CardsOfCart from "../Component/MyCartComponenet/CardsOfCart";
+import TheButtons from "../Component/MyCartComponenet/TheButtons";
 
 export default function MyCartPage() {
   return (
@@ -15,13 +11,8 @@ export default function MyCartPage() {
         <div className="text-center">Total Price</div>
         <div className="text-center">Delet</div>
       </div>
-      <div className="lg:grid grid-cols-[1.6fr_0.6fr_0.6fr_0.6fr_40px] p-6">
-        <Item/>
-        <Quantity/>
-        <Price Price={40} />
-        <Total Price={40}/>
-        <Delete/>
-      </div>
+      <CardsOfCart />
+      
     </div>
   );
 }

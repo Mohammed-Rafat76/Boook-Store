@@ -4,7 +4,9 @@ import { CiDeliveryTruck } from "react-icons/ci";
 export default function Item() {
   return (
     <div className="flex flex-col lg:flex-row justify-center lg:items-start items-center gap-6">
-      <h1 className="lg:hidden block pb-12 text-[20px] font-semibold text-[#000000]">Item</h1>
+      <h1 className="lg:hidden block pb-12 text-[20px] font-semibold text-[#000000]">
+        Item
+      </h1>
       <img
         src={bookImg}
         className="object-cover xl:w-43.25 xl:h-full w-50 h-80"
@@ -28,7 +30,9 @@ export default function Item() {
           <CiDeliveryTruck className="text-green-600" />
           Free Shipping Today
         </div>
-        <p className="font-bold text-[14px] text-[#22222280]">ASIN : <span className="font-normal">B09TWSRMCB</span></p>
+        <p className="font-bold text-[14px] text-[#22222280]">
+          ASIN : <span className="font-normal">B09TWSRMCB</span>
+        </p>
       </div>
     </div>
   );
