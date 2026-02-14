@@ -20,6 +20,7 @@ import CheckOutPage from "./Pages/CheckOutPage";
 import HistoryPage from "./Pages/HistoryPage";
 import HistoryInProgressPage from "./Pages/HistoryInProgressPage";
 import HistoryCompletedPage from "./Pages/HistoryCompletedPage";
+import CanceledPage from "./Pages/CanceledPage";
 export default function App() {
   return (
     <div>
@@ -46,6 +47,7 @@ export default function App() {
             <Route path="/historyPage" element={<HistoryPage />} />
             <Route path="/historyInProgressPage" element={<HistoryInProgressPage />} />
             <Route path="/historyCompletedPage" element={<HistoryCompletedPage />} />
+            <Route path="/canceledPage" element={<CanceledPage />} />
           </Route>
           <Route
             path="*"

@@ -8,7 +8,7 @@ export default function HistoryInProgressPage() {
       <div className="w-full flex flex-col xl:flex-row xl:justify-start justify-center items-center gap-6">
         <Link
           to={"/historyPage"}
-          className=" py-2.5 px-6 bg-transparent  rounded-lg text-[16px] font-normal text-[#222222] "
+          className=" py-2.5 px-6 border border-[#00000033] bg-transparent  rounded-lg text-[16px] font-normal text-[#222222] "
         >
           All
         </Link>
@@ -18,7 +18,7 @@ export default function HistoryInProgressPage() {
         <Link to={"/historyCompletedPage"} className=" py-2.5 px-6 bg-transparent rounded-lg text-[16px] border border-[#00000033] font-normal text-[#222222]">
           Completed
         </Link>
-        <Link className=" py-2.5 px-6 bg-transparent rounded-lg text-[16px] border border-[#00000033] font-normal text-[#222222]">
+        <Link to={"/canceledPage"} className=" py-2.5 px-6 bg-transparent rounded-lg text-[16px] border border-[#00000033] font-normal text-[#222222]">
           Canceled
         </Link>
       </div>
