@@ -19,6 +19,7 @@ import WishlistPage from "./Pages/WishlistPage";
 import CheckOutPage from "./Pages/CheckOutPage";
 import HistoryPage from "./Pages/HistoryPage";
 import HistoryInProgressPage from "./Pages/HistoryInProgressPage";
+import HistoryCompletedPage from "./Pages/HistoryCompletedPage";
 export default function App() {
   return (
     <div>

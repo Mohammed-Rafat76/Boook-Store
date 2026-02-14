@@ -12,7 +12,7 @@ export default function HistoryPage() {
         <Link to={"/historyInProgressPage"} className=" py-2.5 px-6 bg-transparent rounded-lg text-[16px] border border-[#00000033] font-normal text-[#222222]">
           In Progress
         </Link>
-        <Link className=" py-2.5 px-6 bg-transparent rounded-lg text-[16px] border border-[#00000033] font-normal text-[#222222]">
+        <Link to={"/historyCompletedPage"} className=" py-2.5 px-6 bg-transparent rounded-lg text-[16px] border border-[#00000033] font-normal text-[#222222]">
           Completed
         </Link>
         <Link className=" py-2.5 px-6 bg-transparent rounded-lg text-[16px] border border-[#00000033] font-normal text-[#222222]">
